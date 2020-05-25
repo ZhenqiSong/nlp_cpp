@@ -3,4 +3,5 @@ project(nlp_cpp)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(nlp_cpp main.cpp ch02/Utils.h ch02/Utils.cpp ch02/segment.h ch02/segment.cpp)
+aux_source_directory("ch02" CH02)
+add_executable(nlp_cpp main.cpp ${CH02})

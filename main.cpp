@@ -1,13 +1,8 @@
 #include <iostream>
-#include "ch02/Utils.h"
+
 #include "ch02/segment.h"
 
-int main() {
-    auto dic = loadDictionary();
-    auto word_list = fully_segment("商品和服务", dic);
-    for (const auto& word : word_list){
-        cout << word << " ";
-    }
-    cout << endl;
+int main(int argc, char* argv[]) {
+    segment::test(argv);
     return 0;
 }
