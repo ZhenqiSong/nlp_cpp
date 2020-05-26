@@ -18,6 +18,9 @@ namespace segment{
     // 正向最大切分
     std::vector<std::string> segmentForForwardLongest(const std::string& text, const Dict& dic);
 
+    // 反向最长匹配
+    std::vector<std::string> backwardSegment(const std::string& text, const Dict& dic);
+
     void test(char* argv[]);
 }
 

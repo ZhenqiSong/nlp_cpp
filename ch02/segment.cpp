@@ -10,6 +10,7 @@ namespace segment{
         auto dic = loadDictionary(argv[1]);
         println(fully_segment("商品和服务", dic));
         println(segmentForForwardLongest("就读北京大学", dic));
+        println(backwardSegment("研究声明起源", dic));
     }
 
     /**
@@ -47,6 +48,27 @@ namespace segment{
             wordList.push_back(longestWord);
         }
 
+        return wordList;
+    }
+
+    /**
+     * 逆向最长匹配
+     */
+    std::vector<std::string> backwardSegment(const std::string &text, const Dict &dict){
+        std::vector<std::string> wordList;
+
+        for (auto i = text.size()-1; i >= 0;){
+            string longestWord;
+            for (int j=0; j <= i; ++j){
+                auto word = text.substr(j, i);
+                if (dict.find(word) != dict.end() && word.size() > longestWord.size()){
+                    longestWord = word;
+                    break;
+                }
+            }
+            i -= longestWord.size();
+            wordList.push_back(longestWord);
+        }
         return wordList;
     }
 }
