@@ -9,7 +9,19 @@
 #include <iostream>
 #include <string>
 #include <set>
+namespace segment{
+    using Dict = std::set<std::string>;
 
-std::vector<std::string> fully_segment(const std::string& text, const std::set<std::string>& dic);
+    // 完全切分
+    std::vector<std::string> fully_segment(const std::string& text, const Dict& dic);
+
+    // 正向最大切分
+    std::vector<std::string> segmentForForwardLongest(const std::string& text, const Dict& dic);
+
+    // 反向最长匹配
+    std::vector<std::string> backwardSegment(const std::string& text, const Dict& dic);
+
+    void test(char* argv[]);
+}
 
 #endif //NLP_CPP_SEGMENT_H
